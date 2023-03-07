@@ -1,6 +1,6 @@
 [package]
 name = "valico"
-version = "4.0.0-rc.1"
+version = "4.0.0-rc.2"
 authors = ["Stanislav Panferov <fnight.m@gmail.com>"]
 description = "JSON Schema validator and JSON coercer"
 keywords = ["json", "validator", "json-schema"]
@@ -24,7 +24,7 @@ percent-encoding = "2.2.0"
 json-pointer = { version = "0.3.4", git = "https://github.com/brano-hozza/json-pointer.git" }
 uritemplate-next = "0.2.0"
 base64 = "0.21.0"
-erased-serde = "0.3"
+erased-serde = { version = "0.3", features = ["alloc"] }
 downcast-rs = "1"
 
 [build-dependencies]
