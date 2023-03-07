@@ -21,7 +21,7 @@ serde_json = { version = "1", default-features = false, features = ["alloc"]}
 chrono = { version = "0.4.23", default-features = false, features = ["clock", "std"] }
 addr = "0.15.6"
 percent-encoding = "2.2.0"
-json-pointer = "0.3.4"
+json-pointer = { version = "0.3.4", git = "https://github.com/brano-hozza/json-pointer.git" }
 uritemplate-next = "0.2.0"
 base64 = "0.21.0"
 erased-serde = "0.3"
