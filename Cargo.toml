@@ -24,7 +24,7 @@ percent-encoding = "2.2.0"
 json-pointer = { version = "0.3.4", git = "https://github.com/brano-hozza/json-pointer.git" }
 uritemplate-next = "0.2.0"
 base64 = "0.21.0"
-erased-serde = { version = "0.3", features = ["alloc"] }
+erased-serde = { version = "0.3", default-features = false, features = ["alloc"] }
 downcast-rs = "1"
 
 [build-dependencies]
