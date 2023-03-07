@@ -1,6 +1,6 @@
 [package]
 name = "valico"
-version = "4.0.0-rc.2"
+version = "4.0.0-rc.3"
 authors = ["Stanislav Panferov <fnight.m@gmail.com>"]
 description = "JSON Schema validator and JSON coercer"
 keywords = ["json", "validator", "json-schema"]
@@ -16,8 +16,8 @@ url = "2"
 jsonway = { version = "2", git = "https://github.com/brano-hozza/jsonway.git" }
 uuid = { version = "1", features = ["v4"] }
 phf = "0.11"
-serde = { version = "1", default-features = false}
-serde_json = { version = "1", default-features = false, features = ["alloc"]}
+serde = { version = "1", default-features = false, features = ["alloc"] }
+serde_json = { version = "1", default-features = false, features = ["alloc"] }
 chrono = { version = "0.4.23", default-features = false, features = ["clock", "std"] }
 addr = "0.15.6"
 percent-encoding = "2.2.0"
