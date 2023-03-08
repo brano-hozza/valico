@@ -1,0 +1,63 @@
+valico v4.0.0-rc.3 (/Users/bhozza/Documents/GitHub/valico)
+├── addr v0.15.6
+│   ├── psl v2.1.3
+│   │   └── psl-types v2.0.11
+│   └── psl-types v2.0.11
+├── base64 v0.21.0
+├── chrono v0.4.23
+│   ├── iana-time-zone v0.1.53
+│   │   └── core-foundation-sys v0.8.3
+│   ├── num-integer v0.1.45
+│   │   └── num-traits v0.2.15
+│   │       [build-dependencies]
+│   │       └── autocfg v1.1.0
+│   │   [build-dependencies]
+│   │   └── autocfg v1.1.0
+│   └── num-traits v0.2.15 (*)
+├── downcast-rs v1.2.0
+├── erased-serde v0.3.25
+│   └── serde v1.0.153
+├── fancy-regex v0.11.0
+│   ├── bit-set v0.5.3
+│   │   └── bit-vec v0.6.3
+│   └── regex v1.7.1
+│       ├── aho-corasick v0.7.20
+│       │   └── memchr v2.5.0
+│       ├── memchr v2.5.0
+│       └── regex-syntax v0.6.28
+├── json-pointer v0.3.4 (https://github.com/brano-hozza/json-pointer.git#527c6820)
+│   └── serde_json v1.0.94
+│       ├── itoa v1.0.6
+│       ├── ryu v1.0.13
+│       └── serde v1.0.153
+├── jsonway v2.0.0 (https://github.com/brano-hozza/jsonway.git#97975add)
+│   ├── serde v1.0.153
+│   └── serde_json v1.0.94 (*)
+├── percent-encoding v2.2.0
+├── phf v0.11.1
+│   └── phf_shared v0.11.1
+│       └── siphasher v0.3.10
+├── serde v1.0.153
+├── serde_json v1.0.94 (*)
+├── uritemplate-next v0.2.0
+│   └── regex v1.7.1 (*)
+├── url v2.3.1
+│   ├── form_urlencoded v1.1.0
+│   │   └── percent-encoding v2.2.0
+│   ├── idna v0.3.0
+│   │   ├── unicode-bidi v0.3.10
+│   │   └── unicode-normalization v0.1.22
+│   │       └── tinyvec v1.6.0
+│   │           └── tinyvec_macros v0.1.1
+│   └── percent-encoding v2.2.0
+└── uuid v1.3.0
+    └── getrandom v0.2.8
+        ├── cfg-if v1.0.0
+        └── libc v0.2.139
+[build-dependencies]
+└── phf_codegen v0.11.1
+    ├── phf_generator v0.11.1
+    │   ├── phf_shared v0.11.1 (*)
+    │   └── rand v0.8.5
+    │       └── rand_core v0.6.4
+    └── phf_shared v0.11.1 (*)

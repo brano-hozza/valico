@@ -18,7 +18,7 @@ uuid = { version = "1", default-features = false, features = ["v4"] }
 phf = "0.11"
 serde = { version = "1", default-features = false, features = ["alloc"] }
 serde_json = { version = "1", default-features = false, features = ["alloc"] }
-chrono = { version = "0.4.23", default-features = false, features = ["clock", "std"] }
+chrono = { version = "0.4.23", default-features = false, features = ["clock"] }
 addr = "0.15.6"
 percent-encoding = "2.2.0"
 json-pointer = { version = "0.3.4", default-features = false, git = "https://github.com/brano-hozza/json-pointer.git" }
@@ -34,4 +34,6 @@ phf_codegen= "0.11.1"
 name = "tests"
 
 [features]
+default = ["std"]
+std = ["chrono/std", "serde/std", "serde_json/std", "uuid/std"]
 js = ["uuid/js"]
