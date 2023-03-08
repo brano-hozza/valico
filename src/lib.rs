@@ -1,5 +1,5 @@
+#![cfg_attr(not(feature = "std"), no_std)]
 #![allow(clippy::bool_assert_comparison, clippy::new_without_default)]
-
 #[macro_use]
 extern crate serde_json;
 
