@@ -14,7 +14,7 @@ pub enum AdditionalKind {
 
 #[allow(missing_copy_implementations)]
 pub struct Properties {
-    pub properties: collections::HashMap<String, url::Url>,
+    pub properties: collections::BTreeMap<String, url::Url>,
     pub additional: AdditionalKind,
     pub patterns: Vec<(fancy_regex::Regex, url::Url)>,
 }

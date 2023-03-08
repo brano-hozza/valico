@@ -17,7 +17,7 @@ use std::fmt::{Display, Formatter};
 pub struct WalkContext<'a> {
     pub url: &'a Url,
     pub fragment: Vec<String>,
-    pub scopes: &'a mut collections::HashMap<String, Vec<String>>,
+    pub scopes: &'a mut collections::BTreeMap<String, Vec<String>>,
     pub version: SchemaVersion,
 }
 
@@ -98,7 +98,7 @@ pub struct Schema {
     original: Value,
     tree: collections::BTreeMap<String, Schema>,
     validators: validators::Validators,
-    scopes: collections::HashMap<String, Vec<String>>,
+    scopes: collections::BTreeMap<String, Vec<String>>,
     default: RefCell<Option<Value>>,
 }
 
@@ -158,7 +158,7 @@ impl Schema {
             let mut tree = collections::BTreeMap::new();
             let obj = def.as_object().unwrap();
 
-            let mut scopes = collections::HashMap::new();
+            let mut scopes = collections::BTreeMap::new();
 
             for (key, value) in obj.iter() {
                 if !value.is_object() && !value.is_array() && !value.is_boolean() {
@@ -506,7 +506,7 @@ impl Schema {
             original: def,
             tree,
             validators,
-            scopes: collections::HashMap::new(),
+            scopes: collections::BTreeMap::new(),
             default: RefCell::new(None),
         };
 

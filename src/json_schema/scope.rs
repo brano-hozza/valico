@@ -10,7 +10,7 @@ use super::SchemaVersion;
 #[derive(Debug)]
 pub struct Scope {
     keywords: keywords::KeywordMap,
-    schemes: collections::HashMap<String, schema::Schema>,
+    schemes: collections::BTreeMap<String, schema::Schema>,
     pub(crate) supply_defaults: bool,
     schema_version: SchemaVersion,
 }
@@ -26,7 +26,7 @@ impl Scope {
     pub fn without_formats(version: SchemaVersion) -> Scope {
         Scope {
             keywords: keywords::default(),
-            schemes: collections::HashMap::new(),
+            schemes: collections::BTreeMap::new(),
             supply_defaults: false,
             schema_version: version,
         }

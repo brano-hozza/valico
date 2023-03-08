@@ -20,13 +20,13 @@ impl SchemaArray {
 }
 
 pub struct SchemaHash {
-    items: collections::HashMap<String, Value>,
+    items: collections::BTreeMap<String, Value>,
 }
 
 impl SchemaHash {
     pub fn new() -> SchemaHash {
         SchemaHash {
-            items: collections::HashMap::new(),
+            items: collections::BTreeMap::new(),
         }
     }
 
@@ -40,13 +40,13 @@ impl SchemaHash {
 }
 
 pub struct Dependencies {
-    deps: collections::HashMap<String, Dependency>,
+    deps: collections::BTreeMap<String, Dependency>,
 }
 
 impl Dependencies {
     pub fn new() -> Dependencies {
         Dependencies {
-            deps: collections::HashMap::new(),
+            deps: collections::BTreeMap::new(),
         }
     }
 

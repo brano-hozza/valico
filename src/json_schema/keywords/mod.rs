@@ -11,7 +11,7 @@ use super::SchemaVersion;
 pub type KeywordResult = Result<Option<validators::BoxedValidator>, schema::SchemaError>;
 pub type KeywordPair = (Vec<&'static str>, Box<dyn Keyword + 'static>);
 pub type KeywordPairs = Vec<KeywordPair>;
-pub type KeywordMap = collections::HashMap<&'static str, Arc<KeywordConsumer>>;
+pub type KeywordMap = collections::BTreeMap<&'static str, Arc<KeywordConsumer>>;
 
 pub trait Keyword: Send + Sync + any::Any {
     fn compile(&self, def: &Value, ctx: &schema::WalkContext) -> KeywordResult;
@@ -79,7 +79,7 @@ mod unevaluated;
 pub mod unique_items;
 
 pub fn default() -> KeywordMap {
-    let mut map = collections::HashMap::new();
+    let mut map = collections::BTreeMap::new();
 
     decouple_keyword((vec!["$ref"], Box::new(ref_::Ref)), &mut map);
     decouple_keyword((vec!["allOf"], Box::new(of::AllOf)), &mut map);

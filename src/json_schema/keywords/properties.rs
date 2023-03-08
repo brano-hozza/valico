@@ -19,7 +19,7 @@ impl super::Keyword for Properties {
 
         let properties = if let Some(properties) = maybe_properties {
             if let Some(properties) = properties.as_object() {
-                let mut schemes = collections::HashMap::new();
+                let mut schemes = collections::BTreeMap::new();
                 for (key, value) in properties.iter() {
                     if value.is_object() || value.is_boolean() {
                         schemes.insert(
@@ -56,7 +56,7 @@ impl super::Keyword for Properties {
                 });
             }
         } else {
-            collections::HashMap::new()
+            collections::BTreeMap::new()
         };
 
         let additional_properties = if let Some(additional_val) = maybe_additional {

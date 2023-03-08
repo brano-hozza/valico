@@ -4,10 +4,10 @@ use std::collections;
 use super::super::schema;
 use super::super::validators;
 
-pub type FormatBuilders = collections::HashMap<String, Box<dyn super::Keyword + Send + Sync>>;
+pub type FormatBuilders = collections::BTreeMap<String, Box<dyn super::Keyword + Send + Sync>>;
 
 fn default_formats() -> FormatBuilders {
-    let mut map: FormatBuilders = collections::HashMap::new();
+    let mut map: FormatBuilders = collections::BTreeMap::new();
 
     let date_builder = Box::new(|_def: &Value, _ctx: &schema::WalkContext<'_>| {
         Ok(Some(
@@ -272,9 +272,7 @@ fn validate_date() {
         .unwrap();
 
     assert_eq!(
-        schema
-            .validate(&to_value("2015-01-20").unwrap())
-            .is_valid(),
+        schema.validate(&to_value("2015-01-20").unwrap()).is_valid(),
         true
     );
     assert_eq!(
@@ -446,9 +444,7 @@ fn validate_uri() {
         true
     );
     assert_eq!(
-        schema
-            .validate(&to_value("some-wrong").unwrap())
-            .is_valid(),
+        schema.validate(&to_value("some-wrong").unwrap()).is_valid(),
         false
     );
 }
